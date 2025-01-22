@@ -16,6 +16,12 @@
                 <label for="title" class="form-label">Task Title</label>
                 <input type="text" name="title" id="title" class="form-control" value="{{ $task->title }}" required>
             </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Task Description</label>
+                <textarea name="description" id="description" rows="4" class="form-control">{{ $task->description }}</textarea>
+            </div>
+
             <button type="submit" class="btn btn-warning">Update Task</button>
         </form>
     </div>

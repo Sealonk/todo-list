@@ -15,6 +15,12 @@
                 <label for="title" class="form-label">Task Title</label>
                 <input type="text" name="title" id="title" class="form-control" required>
             </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Task Description</label>
+                <textarea name="description" id="description" rows="4" class="form-control" placeholder="Enter task description"></textarea>
+            </div>
+
             <button type="submit" class="btn btn-success">Add Task</button>
         </form>
     </div>

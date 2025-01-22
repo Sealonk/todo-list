@@ -28,6 +28,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
+                    <th>Description</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -37,6 +38,7 @@
                     <tr>
                         <td>{{ $task->id }}</td>
                         <td>{{ $task->title }}</td>
+                        <td>{{ $task->description }}</td>
                         <td>
                             <form action="{{ route('tasks.toggle', $task) }}" method="POST" style="display: inline;">
                                 @csrf
