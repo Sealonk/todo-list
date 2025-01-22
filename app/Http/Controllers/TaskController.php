@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $tasks = Task::all();
+        $query = Task::query();
+
+        if ($request->has('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+
+        $tasks = $query->paginate(5);
         return view('tasks.index', compact('tasks'));
     }
 
@@ -21,8 +27,10 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate(['title' => 'required']);
-        Task::create($request->all());
-        return redirect()->route('tasks.index');
+
+        Task::create(['title' => $request->title]);
+
+        return redirect()->route('tasks.index')->with('success', 'Task added successfully!');
     }
 
     public function edit(Task $task)
@@ -33,13 +41,23 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
         $request->validate(['title' => 'required']);
-        $task->update($request->all());
-        return redirect()->route('tasks.index');
+        $task->update(['title' => $request->title]);
+
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
+
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
+    }
+
+    public function toggleCompleted(Task $task)
+    {
+        $task->completed = !$task->completed;
+        $task->save();
+
         return redirect()->route('tasks.index');
     }
 }

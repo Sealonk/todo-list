@@ -1,0 +1,126 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+a, button {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+    color: #495057;
+}
+
+form input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+}
+
+form button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.table th {
+    background: #f8f9fa;
+    color: #495057;
+}
+
+.table tr:nth-child(even) {
+    background: #f1f3f5;
+}
+
+.table tr:hover {
+    background: #e9ecef;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions a {
+    padding: 8px 12px;
+    background: #ffc107;
+    color: white;
+}
+
+.actions a:hover {
+    background: #e0a800;
+    transform: scale(1.05);
+}
+
+.actions form button {
+    padding: 8px 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+}
+
+.actions form button:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
